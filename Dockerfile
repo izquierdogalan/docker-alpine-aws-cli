@@ -20,11 +20,14 @@ RUN apk add nodejs
 # Install yarn
 RUN apk add yarn
 
+# Install docker
+RUN apk add docker
+
 # Set timezone to UTC by default
 RUN ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime
 
 # Install aws-cli
-RUN apk -Uuv add groff less python py-pip
+RUN apk -Uuv add groff less python py-pip curl
 RUN pip install awscli
 RUN apk --purge -v del py-pip
 RUN rm /var/cache/apk/*
