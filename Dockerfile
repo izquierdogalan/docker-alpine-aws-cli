@@ -23,6 +23,9 @@ RUN apk add yarn
 # Install docker
 RUN apk add docker
 
+# Install serverless
+RUN npm install -g serverless
+
 # Set timezone to UTC by default
 RUN ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime
 
