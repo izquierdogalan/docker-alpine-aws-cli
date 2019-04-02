@@ -28,6 +28,7 @@ RUN npm install -g serverless
 RUN npm install serverless-plugin-include-dependencies
 RUN npm install serverless-offline
 RUN npm install serverless-plugin-warmup
+RUN npm install serverless-plugin-optimize
 
 # Set timezone to UTC by default
 RUN ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime
