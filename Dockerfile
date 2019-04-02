@@ -1,6 +1,6 @@
-FROM alpine:3.7
+FROM node:carbon-alpine
 
-LABEL maintainer="Joe Bell<joe.bell.1329@gmail.com>"
+LABEL maintainer="Dapda<info@dapda.com>"
 
 RUN apk update
 
@@ -24,11 +24,12 @@ RUN apk add yarn
 RUN apk add docker
 
 # Install serverless
-RUN npm install -g serverless
-RUN npm install serverless-plugin-include-dependencies
-RUN npm install serverless-offline
-RUN npm install serverless-plugin-warmup
-RUN npm install serverless-plugin-optimize
+RUN yarn global add serverless
+RUN yarn global add serverless-plugin-include-dependencies
+RUN yarn global add serverless-offline
+RUN yarn global add serverless-plugin-warmup
+RUN yarn global add @grpc/grpc-js
+RUN yarn global add serverless-plugin-optimize
 
 # Set timezone to UTC by default
 RUN ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime
@@ -40,3 +41,4 @@ RUN apk --purge -v del py-pip
 RUN rm /var/cache/apk/*
 
 CMD ["/bin/bash"]
+
