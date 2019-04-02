@@ -25,11 +25,6 @@ RUN apk add docker
 
 # Install serverless
 RUN yarn global add serverless
-RUN yarn global add serverless-plugin-include-dependencies
-RUN yarn global add serverless-offline
-RUN yarn global add serverless-plugin-warmup
-RUN yarn global add @grpc/grpc-js
-RUN yarn global add serverless-plugin-optimize
 
 # Set timezone to UTC by default
 RUN ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime
