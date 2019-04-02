@@ -25,6 +25,10 @@ RUN apk add docker
 
 # Install serverless
 RUN npm install -g serverless
+RUN npm install -g serverless-plugin-include-dependencies
+RUN npm install -g serverless-plugin-optimize
+RUN npm install -g serverless-offline
+RUN npm install -g serverless-plugin-warmup
 
 # Set timezone to UTC by default
 RUN ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime
