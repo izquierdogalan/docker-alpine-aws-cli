@@ -23,7 +23,7 @@ RUN apk add yarn
 # Install docker
 RUN apk add docker
 
-# Install serverless
+# Install serverless for aws
 RUN yarn global add serverless
 
 # Set timezone to UTC by default
