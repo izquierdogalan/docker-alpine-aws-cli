@@ -31,7 +31,17 @@ RUN ln -sf /usr/share/zoneinfo/Etc/UTC /etc/localtime
 
 # Install aws-cli
 RUN apk -Uuv add groff less python py-pip curl
-RUN pip install awscli
+RUN apk -v --update add \
+        python \
+        py-pip \
+        yarn \
+        groff \
+        less \
+        mailcap \
+        && \
+    pip install --upgrade pip awscli==1.14.5 s3cmd==2.0.1 python-magic && \
+    apk -v --purge del py-pip && \
+    rm /var/cache/apk/*
 RUN apk --purge -v del py-pip
 RUN rm /var/cache/apk/*
 
