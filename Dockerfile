@@ -1,4 +1,4 @@
-FROM node:carbon-alpine
+FROM node:dubnium-alpine
 
 LABEL maintainer="Dapda<info@dapda.com>"
 
