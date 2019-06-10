@@ -1,4 +1,4 @@
-FROM node:dubnium-alpine
+FROM node:12.4-alpine
 
 LABEL maintainer="Dapda<info@dapda.com>"
 
